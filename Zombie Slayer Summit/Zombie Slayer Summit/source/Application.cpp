@@ -1,6 +1,6 @@
 #include <GL/glew.h>
 #include "Application.h"
-#include "TestState.h"
+#include "states/TestState.h"
 
 #include <SDL2/SDL.h>
 

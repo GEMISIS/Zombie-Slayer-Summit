@@ -1,4 +1,4 @@
-#include "TestState.h"
+#include "states/TestState.h"
 
 int main(int argc, char *argv[])
 {

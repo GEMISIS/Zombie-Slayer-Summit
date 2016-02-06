@@ -1,8 +1,8 @@
 #pragma once
 
 #include "Application.h"
-#include "Shader.h"
-#include "TestShape.h"
+#include "graphics/Shader.h"
+#include "graphics/TestShape.h"
 
 class TestState :
 	public GameState

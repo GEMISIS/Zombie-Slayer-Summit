@@ -1,15 +1,15 @@
 #include <Windows.h>
 #include <GL/glew.h>
 
-#include "Shader.h"
+#include "graphics/Shader.h"
 
 using namespace std;
 
 Shader::Shader(string vertexFileName, string fragmentFileName)
 {
 	this->ready = false;
-	this->vertexFileName = vertexFileName;
-	this->fragmentFileName = fragmentFileName;
+	this->vertexFileName = "shaders/" + vertexFileName;
+	this->fragmentFileName = "shaders/" + fragmentFileName;
 	if (this->Load() < 1)
 	{
 		cout << "Error loading shader sources!" << endl;

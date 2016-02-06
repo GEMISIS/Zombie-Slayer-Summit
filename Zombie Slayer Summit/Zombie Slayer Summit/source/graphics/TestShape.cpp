@@ -1,7 +1,7 @@
 #include <Windows.h>
 #include <GL/glew.h>
 
-#include "TestShape.h"
+#include "graphics/TestShape.h"
 
 GLfloat vData[] = {
 	-0.5f,  0.5f, 1.0f, 0.0f, 0.0f, // Top-left

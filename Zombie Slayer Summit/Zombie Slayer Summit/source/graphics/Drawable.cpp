@@ -1,7 +1,7 @@
 #include <Windows.h>
 #include <GL/glew.h>
 
-#include "Drawable.h"
+#include "graphics/Drawable.h"
 
 Drawable::Drawable()
 {

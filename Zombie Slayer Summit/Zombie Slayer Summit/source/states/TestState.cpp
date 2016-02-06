@@ -1,5 +1,5 @@
-#include "TestState.h"
-#include "TestState2.h"
+#include "states/TestState.h"
+#include "states/TestState2.h"
 #include "Application.h"
 
 TestState::TestState(Application* app) : GameState(app)
