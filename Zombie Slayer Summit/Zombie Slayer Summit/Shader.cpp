@@ -107,7 +107,6 @@ int Shader::Link()
 
 	glAttachShader(this->shaderProgram, this->vertexShader);
 	glAttachShader(this->shaderProgram, this->fragmentShader);
-	glBindFragDataLocation(this->shaderProgram, 0, "outColor");
 	glLinkProgram(this->shaderProgram);
 
 	GLint linked;

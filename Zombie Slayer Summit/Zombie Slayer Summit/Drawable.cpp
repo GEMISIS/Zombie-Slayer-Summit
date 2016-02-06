@@ -5,6 +5,9 @@
 
 Drawable::Drawable()
 {
+	this->vao = 0;
+	this->vbo = 0;
+	this->ebo = 0;
 	glGenVertexArrays(1, &this->vao);
 }
 
@@ -14,7 +17,7 @@ void Drawable::loadVertices(float data[], size_t size)
 
 	glGenBuffers(1, &this->vbo);
 	glBindBuffer(GL_ARRAY_BUFFER, this->vbo);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(data), data, GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat) * this->vertices.size(), this->vertices.data(), GL_STATIC_DRAW);
 }
 
 void Drawable::loadVertices(std::vector<float> data)
@@ -23,7 +26,7 @@ void Drawable::loadVertices(std::vector<float> data)
 
 	glGenBuffers(1, &this->vbo);
 	glBindBuffer(GL_ARRAY_BUFFER, this->vbo);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(this->vertices), &this->vertices, GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat) * this->vertices.size(), this->vertices.data(), GL_STATIC_DRAW);
 }
 
 void Drawable::loadElements(GLuint data[], size_t size)
@@ -32,7 +35,7 @@ void Drawable::loadElements(GLuint data[], size_t size)
 
 	glGenBuffers(1, &this->ebo);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, this->ebo);
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(data), data, GL_STATIC_DRAW);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(GLuint) * this->elements.size(), this->elements.data(), GL_STATIC_DRAW);
 }
 void Drawable::loadElements(std::vector<GLuint> data)
 {
@@ -40,7 +43,7 @@ void Drawable::loadElements(std::vector<GLuint> data)
 
 	glGenBuffers(1, &this->ebo);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, this->ebo);
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(this->elements), &this->elements, GL_STATIC_DRAW);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(GLuint) * this->elements.size(), this->elements.data(), GL_STATIC_DRAW);
 }
 
 void Drawable::bindVAO()

@@ -95,5 +95,10 @@ void Application::SetState(GameStateBase* state)
 
 Application::~Application()
 {
+	if (this->state != nullptr)
+	{
+		this->state->Destroy();
+		delete this->state;
+	}
 	SDL_Quit();
 }

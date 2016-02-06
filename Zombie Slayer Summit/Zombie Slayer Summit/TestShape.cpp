@@ -28,3 +28,7 @@ TestShape::TestShape(Shader* shader) : Drawable()
 	glEnableVertexAttribArray(this->colorAttribute);
 	glVertexAttribPointer(this->colorAttribute, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(GLfloat), (void*)(2 * sizeof(GLfloat)));
 }
+
+TestShape::~TestShape()
+{
+}

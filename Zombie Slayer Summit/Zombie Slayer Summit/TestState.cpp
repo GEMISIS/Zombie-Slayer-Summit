@@ -19,7 +19,6 @@ bool TestState::Update()
 {
 	glClear(GL_COLOR_BUFFER_BIT);
 	this->test->Draw();
-	GLenum error = glGetError();
 
 	const uint8_t* state = SDL_GetKeyboardState(NULL);
 	if (state[SDL_SCANCODE_RIGHT])
@@ -32,6 +31,8 @@ bool TestState::Update()
 
 bool TestState::Destroy()
 {
+	delete this->test;
+	delete this->shader;
 	return true;
 }
 
