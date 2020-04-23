@@ -7,7 +7,9 @@ class TestShape : public Drawable
 {
 public:
 	TestShape(Shader* shader);
+	bool Draw();
 	~TestShape();
 private:
-	GLint positionAttribute, colorAttribute;
+	GLuint textureID;
+	GLint positionAttribute, uvAttribute, colorAttribute;
 };

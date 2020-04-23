@@ -2,7 +2,8 @@
 
 Window::Window(const std::string& title, int width, int height)
 {
-	this->sdlWindow = SDL_CreateWindow(title.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_FLAG);
+	this->sdlWindow = SDL_CreateWindow(title.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_OPENGL | SDL_WINDOW_BORDERLESS | SDL_WINDOW_MAXIMIZED);
+
 	if (this->sdlWindow == nullptr)
 	{
 		throw window_exception(SDL_GetError());

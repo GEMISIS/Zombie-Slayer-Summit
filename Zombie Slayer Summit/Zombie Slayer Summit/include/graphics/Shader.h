@@ -4,6 +4,7 @@
 #include <sstream>
 #include <iostream>
 #include <fstream>
+#include <glm/glm.hpp>
 
 class Shader
 {
@@ -11,6 +12,8 @@ public:
 	Shader(std::string vertexFileName, std::string fragmentFileName);
 	bool Use();
 	GLint getAttribute(std::string name);
+	GLint getUniformLocation(std::string name);
+	void SetUniformMatrix(GLint location, glm::mat4 matrix);
 private:
 	std::ifstream vertFile, fragFile;
 	std::string vertexFileName, fragmentFileName;

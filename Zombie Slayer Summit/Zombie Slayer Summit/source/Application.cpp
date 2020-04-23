@@ -14,10 +14,20 @@ Application::Application()
 		}
 		else
 		{
+			SDL_GL_SetAttribute(SDL_GL_MULTISAMPLEBUFFERS, 1);
+			SDL_GL_SetAttribute(SDL_GL_MULTISAMPLESAMPLES, 16);
+
+			SDL_GL_SetAttribute(SDL_GL_ACCELERATED_VISUAL, 1);
+
 			this->window = new Window("Demo Project", 640, 480);
 			if (glewInit() != GLEW_OK)
 			{
 				std::cout << "Error initializing GLEW!" << std::endl;
+			}
+			else
+			{
+				glEnable(GL_MULTISAMPLE);
+				glEnable(GL_DEPTH_TEST);
 			}
 		}
 	}

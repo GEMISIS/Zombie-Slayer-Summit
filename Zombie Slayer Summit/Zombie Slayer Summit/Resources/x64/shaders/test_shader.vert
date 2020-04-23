@@ -5,6 +5,9 @@ in vec3 color;
 
 out vec3 Color;
 
+uniform mat4 projectMatrix;
+uniform mat4 viewMatrix;
+
 void main()
 {
     Color = color;
